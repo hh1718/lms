@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# api root
+
+# account
+GET           /api/account           controllers.AccountController.getAccountById(id: Int)
+GET           /api/users             controllers.AccountController.getUsers(size: Int)
+POST          /account/create        controllers.AccountController.createAccount()
+DELETE        /account/delete        controllers.AccountController.deleteAccount()
+
+# event
+GET           /event/:id             controllers.EventController.getEventById(id: Int)
+POST          /event/create          controllers.EventController.createEvent()
+DELETE        /event/delete          controllers.EventController.deleteEvent()
+
+# chat
+
+
+# view
+GET           /                      controllers.ViewController.index()
+GET           /sample                controllers.ViewController.sample()
